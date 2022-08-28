@@ -1,4 +1,5 @@
 using CatalogService.Infrastructure;
+using CatalogService.MessageBus;
 using CatalogService.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,11 +16,14 @@ if (builder.Environment.IsProduction())
 else
 {
     builder.Services.AddDbContext<CatalogContext>(options =>
-    options.UseInMemoryDatabase("Catalog"));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    // builder.Services.AddDbContext<CatalogContext>(options =>
+    // options.UseInMemoryDatabase("Catalog"));
 }
 
 
 builder.Services.AddScoped<IProductRepo, ProductRepo>();
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 //add auto mapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

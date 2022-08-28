@@ -1,3 +1,5 @@
+using CartService.MessageBus.AsyncDataServices;
+using CartService.MessageBus.EventProcessing;
 using CartService.Repos;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,9 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddHostedService<MessageBusSubscriber>();
+builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
 builder.Services.AddScoped<IShoppingCartRepo, ShoppingCartRepo>();
 
 //Add Redis Cache to the container

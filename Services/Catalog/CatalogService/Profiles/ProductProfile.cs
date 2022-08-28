@@ -10,6 +10,7 @@ namespace CatalogService.Profiles
         {
             CreateMap<Product, ProductReadDto>();
             CreateMap<ProductCreateDto, Product>();
+            CreateMap<ProductReadDto, ProductPublishDto>();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Catalog.UnitTest
 
 
             // Arrange
-            var catalogController = new CatalogController(_mockProductRepo.Object, mockMapper.Object);
+            var catalogController = new CatalogController(_mockProductRepo.Object, mockMapper.Object, null);
 
             // Act
             var actionResult = await catalogController.GetAllProducts();
@@ -56,7 +56,7 @@ namespace Catalog.UnitTest
             
             _mockProductRepo.Setup(o => o.GetByIdAsync(10)).ReturnsAsync(new Product());
             
-            var catalogController = new CatalogController(_mockProductRepo.Object, mockMapper.Object);
+            var catalogController = new CatalogController(_mockProductRepo.Object, mockMapper.Object, null);
 
             //Act
             var actionResult = await catalogController.GetProductById(10);
