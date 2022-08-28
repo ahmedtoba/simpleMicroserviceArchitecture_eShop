@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cartservice
+  template:
+    metadata:
+      labels:
+        app: cartservice
+    spec:
+      containers:
+        - name: cartservice
+          image: ahmedtoba/cartservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: cartservice
+  ports:
+    - name: cartservice
+      protocol: TCP
+      port: 80
+      targetPort: 80
+

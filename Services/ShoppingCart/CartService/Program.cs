@@ -14,7 +14,7 @@ builder.Services.AddScoped<IShoppingCartRepo, ShoppingCartRepo>();
 //Add Redis Cache to the container
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = builder.Configuration.GetValue<string>("Redis:ConnectionString");
+    options.Configuration = builder.Configuration.GetValue<string>("RedisCache:ConnectionString");
 });
 
 

@@ -19,17 +19,17 @@ namespace CatalogService.Infrastructure
 
         public static void SeedData (CatalogContext context, bool isProd)
         {
-            // if (isProd)
-            // {
-            //     try 
-            //     {
-            //         context.Database.Migrate();
-            //     }
-            //     catch (Exception ex)
-            //     {
-            //         Console.WriteLine("--> Could not run migrations: {ex.Message}");
-            //     }
-            // }
+            if (isProd)
+            {
+                try 
+                {
+                    context.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("--> Could not run migrations: {ex.Message}");
+                }
+            }
 
             if (!context.Products.Any())
             {

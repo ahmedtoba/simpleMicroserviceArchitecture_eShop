@@ -9,10 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 if (builder.Environment.IsProduction())
 {
-    // builder.Services.AddDbContext<CatalogContext>(options =>
-    //     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
     builder.Services.AddDbContext<CatalogContext>(options =>
-    options.UseInMemoryDatabase("Catalog"));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("CatalogConn")));
 }
 else
 {

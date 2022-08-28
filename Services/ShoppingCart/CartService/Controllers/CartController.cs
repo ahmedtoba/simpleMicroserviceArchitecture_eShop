@@ -15,7 +15,7 @@ namespace CartService.Controllers
             _cartRepo = cartRepo;
         }
 
-        [HttpGet("{username}", Name = "GetCart")]
+        [HttpGet("GetCart/{username}", Name = "GetCart")]
         public async Task<ActionResult<Cart>> GetCart(string username)
         {
             var cart = await _cartRepo.GetCart(username);
@@ -33,6 +33,12 @@ namespace CartService.Controllers
         {
             await _cartRepo.ClearCart(username);
             return Ok();
+        }
+
+        [HttpGet("welcome")]
+        public ActionResult Welcome()
+        {
+            return Ok("Welcome to the Cart Service");
         }
 
     }
