@@ -28,14 +28,15 @@
 ### Catalog Service
 
 **This Servcie is for CRUD Operation of the Product. It uses SQL Server as a Database**
-**User Can add product to cart**
+**User Can add product to cart where the CatalogService publish an event in the RabbitMQ Event Bus**
 **Internal Diagram of Catalog Microservice**
 ![image](https://user-images.githubusercontent.com/20687611/187052091-085be62d-3710-447f-9d13-6826df0f280e.png)
 
 ### Cart Service
 
-**The Cart service is responsible for operations on the user basket such as creating a user basket, adding product to Shopping Cart**
+**The Cart service is responsible for operations on the user Cart such as creating a user Cart, adding product to Shopping Cart**
 **It Uses Redis Cache for updating and retreiving user cart data**
+**It subscribes to the event bus and when product added to cart it updates the cart info"
 
 ### Tools used
 - **Docker : For containerizing services**
