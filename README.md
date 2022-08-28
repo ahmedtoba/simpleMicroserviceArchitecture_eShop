@@ -1,10 +1,12 @@
 # simpleMicroserviceArchitecture_eShop
 
-## This is a simple e-shop app using Microservices Architecture.
-## The app is containerized using Docker and orchestrated using Kubernetes
+**This is a simple e-shop app using Microservices Architecture.**
+**The app is containerized using Docker and orchestrated using Kubernetes**
 
-**Application Architecture Diagram**
+
 ![microservice_diagram](https://user-images.githubusercontent.com/20687611/187051742-2dfb0ee6-f38a-43ff-8abd-91ce8817bd9e.png)
+
+![kubernetes_Architecture](https://user-images.githubusercontent.com/20687611/187067321-ffcec593-b122-4071-a3c5-cf50b74015a8.png)
 
 **Services Created**
 - The App consists of 2 services (It's typically should be more than this but no time for this)
