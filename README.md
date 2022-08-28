@@ -41,7 +41,7 @@
 - **Docker : For containerizing services**
 - **Kubernetes : For Orchestrating containers and deployment**
 - **Ingress Nginx API Gateway: Acts as the gateway to all services**
-- **RabbitMQ with MassTransit: Allows Async communication between services**
+- **RabbitMQ Event Bus: Allows Async communication between services**
 
 ### Unit Testing
 - **Xunit framework and Moq package are used for Unit Tests**
