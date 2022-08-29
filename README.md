@@ -9,7 +9,7 @@
 ![kubernetes_Architecture](https://user-images.githubusercontent.com/20687611/187067321-ffcec593-b122-4071-a3c5-cf50b74015a8.png)
 
 **Services Created**
-- The App consists of 2 services (It's typically should be more than this but no time for this)
+- The App consists of 2 services (It should be typically more than this but no time for this)
     - Catalog service 
     - Shopping Cart Service
 
